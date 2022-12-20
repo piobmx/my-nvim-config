@@ -5,7 +5,6 @@
 --
 
 vim.g.mapleader=","
-vim.keymap.set('n', '<leader>v', '<cmd>CHADopen<cr>')
 vim.api.nvim_set_keymap('n', 'ev', ':e $MYVIMRC<cr> :echo "jumped to" $MYVIMRC<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'sov', ':so $MYVIMRC<cr> :echo $MYVIMRC "is Reloaded"<cr>', { noremap = true })
 vim.opt.encoding="utf-8"
@@ -89,6 +88,7 @@ end)
 --   "ts=typescript"
 -- }
 
+vim.keymap.set('n', '<leader>v', '<cmd>CHADopen<cr>')
 local chadtree_settings = { view = 
 		{open_direction = "left",
 		width=32 }, }
