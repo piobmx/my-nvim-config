@@ -1,9 +1,1 @@
-
-
-print(vim.fn.printf('Hello from %s', 'Lua'))
-
-
-
-
-
-
+print(vim.fn.printf('Hello from %s, term: {$TERM_PROGRAM}', 'Lua' ))
