@@ -1,3 +1,8 @@
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+
+local nvim_lsp = require("lspconfig")
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -9,6 +14,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+	print(vim.fn.printf('Hi!: %s, ', 'LSP attached' ))
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -45,11 +51,21 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local nvim_lsp = require("lspconfig")
-nvim_lsp.denols.setup{
-    on_attach = on_attach,
-    cmd = { "deno", "lsp" },
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", 
-	"typescript", "typescriptreact", "typescript.tsx" },
-    init_options = { enable = true, lint = true, unstable = true },
+--nvim_lsp.denols.setup{
+--    on_attach = on_attach,
+--	single_file_support = false,
+--	root_dir = nvim_lsp.util.root_pattern("deno.json"),
+--    cmd = { "deno", "lsp" },
+--    filetypes = { "javascript", "javascriptreact", "javascript.jsx", 
+--	"typescript", "typescriptreact", "typescript.tsx" },
+--    init_options = { enable=true, lint=true, unstable = true },
+--}
+nvim_lsp.tsserver.setup {
+	on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  init_options = {
+	  enable=false,
+    lint = false,
+  },
+
 }

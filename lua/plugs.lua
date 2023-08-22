@@ -4,13 +4,18 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- List of plugins goes here
 -- ....
 
+	Plug 'nvim-treesitter/nvim-treesitter'
+	Plug 'cuducos/yaml.nvim'
+
 	Plug 'khaveesh/vim-fish-syntax'
 	Plug 'NvChad/nvim-colorizer.lua'
 	Plug 'mhartington/formatter.nvim'
 	Plug 'maxmellon/vim-jsx-pretty'
 	Plug 'b3nj5m1n/kommentary' -- comment hotkey: gcc 
+	Plug 'lukas-reineke/indent-blankline.nvim'
 
 
+	Plug 'nvim-tree/nvim-tree.lua'
 
 	--Plug('treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 	-- Plug('ms-jpq/chadtree', {branch = 'chad', ['do'] = 'python3 -m chadtree deps'})
@@ -18,11 +23,12 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 	Plug 'windwp/nvim-autopairs'
 	-- Plug 'vijaymarupudi/nvim-fzf'
 	Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+
 	--Plug 'mbbill/undotree'
 	--
 	-- barbar 
-	-- Plug 'nvim-tree/nvim-web-devicons'
-	-- Plug 'romgrk/barbar.nvim'
+	Plug 'nvim-tree/nvim-web-devicons'
+	Plug 'romgrk/barbar.nvim'
 	-- telescope
 	Plug 'nvim-lua/plenary.nvim'
 	Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
