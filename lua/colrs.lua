@@ -14,6 +14,7 @@ vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1e1e1e', fg = nil, underline = tru
 vim.api.nvim_set_hl(0, 'CursorColumn', {  fg="#fa1ac9", bg="#aeccff" })
 
 vim.api.nvim_set_hl(0, 'LineNrAbove', {  bg="#823494",  })
+vim.api.nvim_set_hl(0, 'NormalFloat', {  bg="#000033",  })
 
 -- hi Cursor     guifg=yellow guibg=gray  ctermfg=yellow ctermbg=gray
 -- hi lCursor    guifg=black  guibg=white ctermfg=black ctermbg=white
